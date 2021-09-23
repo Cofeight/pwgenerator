@@ -66,7 +66,7 @@ function generatePassword() {
         return;
       }
 
-  var hasSpecChar = prompt("Do you want this password to have special characters? (Y/N");
+  var hasSpecChar = prompt("Do you want this password to have special characters? (Y/N)");
 
       hasSpecChar = hasSpecChar.toUpperCase();
         if ( 
