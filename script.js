@@ -14,7 +14,7 @@ const specChar = ["!" + "@" + "#" + "$" + "%" + "^" + "&" + "*" + "(" + ")" + "-
 
 // Write password to the #password input
 function generatePassword() {
-  var passwordLength = prompt("Choose the length of your password (between 8 and 128 characters");
+  var passwordLength = prompt("Choose the length of your password (between 8 and 128 characters)");
 
     if ( 
       passwordLength < 8
@@ -26,7 +26,7 @@ function generatePassword() {
 // How do I provide a negative response to the integer where it will not accept a letter after repeated password generations?
        ) 
     {
-        alert ("You MUST pick a length between 8 and 128 characters");
+        alert ("You MUST pick a length between 8 and 128 characters.");
         return;
     }
 
@@ -79,7 +79,7 @@ function generatePassword() {
       } 
 
       if (hasUpper ==  "N" && hasLower == "N" && hasNumbers == "N" && hasSpecChar == "N") {
-        alert("You must choose at least one character type"); 
+        alert("You MUST choose at least one character type."); 
         return;
       }
       
