@@ -8,27 +8,30 @@ var passwordText = "";
 const upperCase = ['A' + 'B' + 'C' + 'D' + 'E' + 'F' + 'G' + 'H' + 'I' + 'J' + 'K' + 'L' + 'M' + 'N' + 'O' + 'P' + 'Q' + 'R' + 'S' + 'T' + 'U' + 'V' + 'W' + 'X' + 'Y' + 'Z' ];
 const lowerCase = ["a" + "b" + "c" + "d" + "e" + "f" + "g" + "h" + "i" + "j" + "k" + "l" + "m" + "n" + "o" + "p" + "q" + "r" + "s" + "t" + "u" + "v" + "w" + "x" + "y" + "z" ];
 const numbers = ['0' + '1' + '2' + '3' + '4' + '5' + '6' + '7' + '8' + '9' ];
-const specChar = ["!" + "@" + "#" + "$" + "%" + "^" + "&" + "*" + "(" + ")" + "-" + "_ "];
+const specChar = ["!" + "@" + "#" + "$" + "%" + "^" + "&" + "*" + "(" + ")" + "-" + "_" ];
 
-//+ symbol removes any space between ""
+//+ symbol removes any space between "" or ''
 
 // Write password to the #password input
+//parseInt turns a string variable into an integer
+//triggers a falsey statement when passwordLength is met with no integer
 function generatePassword() {
   var passwordLength = prompt("Choose the length of your password (between 8 and 128 characters)");
+  console.log(Number.isInteger(parseInt(passwordLength)))
 
-    if ( 
+  if ( 
       passwordLength < 8
       ||
       passwordLength > 128
-//    ||
-//    Number.isInteger(passwordLength) !== false
+      ||
+      Number.isInteger(parseInt(passwordLength)) == false
 
-// How do I provide a negative response to the integer where it will not accept a letter after repeated password generations?
+// How do I provide a negative response to the integer where it will not accept a letter after repeated password generations? SEE NOTE ABOVE
        ) 
     {
         alert ("You MUST pick a length between 8 and 128 characters.");
-        return;
-    }
+        return generatePassword() ;
+    } 
 
     var hasUpper = prompt("Do you want this password to have upper case letters? (Y/N)");
 
@@ -80,7 +83,7 @@ function generatePassword() {
 
       if (hasUpper ==  "N" && hasLower == "N" && hasNumbers == "N" && hasSpecChar == "N") {
         alert("You MUST choose at least one character type."); 
-        return;
+        return  generatePassword() ;
       }
       
         if (hasUpper == "Y") {
@@ -105,6 +108,17 @@ function generatePassword() {
         choices = "";
 
 }
+
+// /https://stackoverflow.com/questions/47633055/javascript-copy-input-value
+//this function adds the copy ability to the generated code
+
+function copyToClipboard() {
+  console.log("clicked")
+  var textBox = document.getElementById("password");
+  textBox.select();
+  document.execCommand("copy");
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", generatePassword);
   
