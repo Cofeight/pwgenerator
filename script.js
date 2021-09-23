@@ -19,15 +19,7 @@ function generatePassword() {
   var passwordLength = prompt("Choose the length of your password (between 8 and 128 characters)");
   console.log(Number.isInteger(parseInt(passwordLength)))
 
-  if ( 
-      passwordLength < 8
-      ||
-      passwordLength > 128
-      ||
-      Number.isInteger(parseInt(passwordLength)) == false
-
-// How do I provide a negative response to the integer where it will not accept a letter after repeated password generations? SEE NOTE ABOVE
-       ) 
+  if (passwordLength < 8 || passwordLength > 128 || Number.isInteger(parseInt(passwordLength)) == false) 
     {
         alert ("You MUST pick a length between 8 and 128 characters.");
         return generatePassword() ;
@@ -36,48 +28,32 @@ function generatePassword() {
     var hasUpper = prompt("Do you want this password to have upper case letters? (Y/N)");
 
       hasUpper = hasUpper.toUpperCase();
-        if ( 
-            hasUpper !== "Y"
-            &&
-            hasUpper !== "N"
-          ) {
-          alert ("You MUST choose Y or N");
+        if (hasUpper !== "Y" && hasUpper !== "N") {
+          alert ("You MUST choose Y or N.");
         return generatePassword() ;
       }
 
   var hasLower = prompt("Do you want this password to have lower case letters? (Y/N)");
 
       hasLower = hasLower.toUpperCase();
-        if ( 
-          hasLower !== "Y"
-          &&
-          hasLower !== "N"
-          ) {
-          alert ("You MUST choose Y or N");
+        if (hasLower !== "Y" && hasLower !== "N") {
+          alert ("You MUST choose Y or N.");
         return generatePassword() ;
       }
 
   var hasNumbers = prompt("Do you want this password to have numbers? (Y/N)");
 
       hasNumbers = hasNumbers.toUpperCase();
-        if ( 
-          hasNumbers !== "Y" 
-          && 
-          hasNumbers !== "N" 
-          ) { 
-          alert ("You MUST choose Y or N");
+        if (hasNumbers !== "Y" && hasNumbers !== "N") { 
+          alert ("You MUST choose Y or N.");
         return generatePassword() ;
       }
 
   var hasSpecChar = prompt("Do you want this password to have special characters? (Y/N)");
 
       hasSpecChar = hasSpecChar.toUpperCase();
-        if ( 
-          hasSpecChar !== "Y" 
-          && 
-          hasSpecChar !== "N" 
-          ) { 
-          alert ("You MUST choose Y or N");
+        if (hasSpecChar !== "Y" && hasSpecChar !== "N") { 
+          alert ("You MUST choose Y or N.");
         return generatePassword() ;
       } 
 
