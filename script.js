@@ -42,7 +42,7 @@ function generatePassword() {
             hasUpper !== "N"
           ) {
           alert ("You MUST choose Y or N");
-        return;
+        return generatePassword() ;
       }
 
   var hasLower = prompt("Do you want this password to have lower case letters? (Y/N)");
@@ -54,7 +54,7 @@ function generatePassword() {
           hasLower !== "N"
           ) {
           alert ("You MUST choose Y or N");
-        return;
+        return generatePassword() ;
       }
 
   var hasNumbers = prompt("Do you want this password to have numbers? (Y/N)");
@@ -66,7 +66,7 @@ function generatePassword() {
           hasNumbers !== "N" 
           ) { 
           alert ("You MUST choose Y or N");
-        return;
+        return generatePassword() ;
       }
 
   var hasSpecChar = prompt("Do you want this password to have special characters? (Y/N)");
@@ -78,7 +78,7 @@ function generatePassword() {
           hasSpecChar !== "N" 
           ) { 
           alert ("You MUST choose Y or N");
-        return;
+        return generatePassword() ;
       } 
 
       if (hasUpper ==  "N" && hasLower == "N" && hasNumbers == "N" && hasSpecChar == "N") {
