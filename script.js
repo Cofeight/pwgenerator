@@ -20,8 +20,8 @@ function generatePassword() {
       passwordLength < 8
       ||
       passwordLength > 128
-//      ||
-//      Number.isInteger(passwordLength) == false
+//    ||
+//    Number.isInteger(passwordLength) !== false
 
 // How do I provide a negative response to the integer where it will not accept a letter after repeated password generations?
        ) 
@@ -66,7 +66,7 @@ function generatePassword() {
         return;
       }
 
-  var hasSpecChar = prompt("Do you want this password to have special characters?");
+  var hasSpecChar = prompt("Do you want this password to have special characters? (Y/N");
 
       hasSpecChar = hasSpecChar.toUpperCase();
         if ( 
